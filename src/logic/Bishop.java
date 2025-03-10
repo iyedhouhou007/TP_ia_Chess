@@ -28,7 +28,6 @@ public class Bishop extends ChessPiece {
                 int newIndex = newRow * 8 + newCol;
                 if (chrom[newIndex] != null) {
                     conflicts++;
-                    break;
                 }
             }
         }
@@ -56,7 +55,6 @@ public class Bishop extends ChessPiece {
                 }
                 if (board[newRow][newCol] != null) {
                     conflicts++;
-                    break;
                 }
             }
         }

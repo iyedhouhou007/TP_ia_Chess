@@ -34,7 +34,6 @@ public class Rook extends ChessPiece {
         for (int c = col - 1; c >= 0; c--) {
             if (board[row][c] != null) {
                 conflicts++;
-                break;
             }
         }
 
@@ -42,7 +41,6 @@ public class Rook extends ChessPiece {
         for (int c = col + 1; c < 8; c++) {
             if (board[row][c] != null) {
                 conflicts++;
-                break;
             }
         }
 
@@ -50,7 +48,6 @@ public class Rook extends ChessPiece {
         for (int r = row - 1; r >= 0; r--) {
             if (board[r][col] != null) {
                 conflicts++;
-                break;
             }
         }
 
@@ -58,7 +55,6 @@ public class Rook extends ChessPiece {
         for (int r = row + 1; r < 8; r++) {
             if (board[r][col] != null) {
                 conflicts++;
-                break;
             }
         }
 

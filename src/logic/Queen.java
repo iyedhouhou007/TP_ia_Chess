@@ -18,7 +18,6 @@ public class Queen extends ChessPiece {
             if (i == col) continue;
             if (chrom[row * 8 + i] != null) {
                 conflicts++;
-                break;
             }
         }
 
@@ -26,36 +25,32 @@ public class Queen extends ChessPiece {
         for (int i = 0; i < 8; i++) {
             if (i == row) continue;
             if (chrom[i * 8 + col] != null) {
-                conflicts++; // Increment conflict count by 1 (direction is conflicted)
-                break;      // Stop checking vertically, conflict found in this direction
+                conflicts++;
             }
         }
 
         // Diagonal Check (Top-Left to Bottom-Right)
         for (int i = 1; row - i >= 0 && col - i >= 0; i++) {
             if (chrom[(row - i) * 8 + (col - i)] != null) {
-                conflicts++; // Increment conflict count by 1 (direction is conflicted)
-                break;      // Stop checking diagonal direction, conflict found
+                conflicts++;
+
             }
         }
         for (int i = 1; row + i < 8 && col + i < 8; i++) {
             if (chrom[(row + i) * 8 + (col + i)] != null) {
-                conflicts++; // Increment conflict count by 1 (direction is conflicted)
-                break;      // Stop checking diagonal direction, conflict found
+                conflicts++;
             }
         }
 
         // Diagonal Check (Top-Right to Bottom-Left)
         for (int i = 1; row - i >= 0 && col + i < 8; i++) {
             if (chrom[(row - i) * 8 + (col + i)] != null) {
-                conflicts++; // Increment conflict count by 1 (direction is conflicted)
-                break;      // Stop checking diagonal direction, conflict found
+                conflicts++;
             }
         }
         for (int i = 1; row + i < 8 && col - i >= 0; i++) {
             if (chrom[(row + i) * 8 + (col - i)] != null) {
-                conflicts++; // Increment conflict count by 1 (direction is conflicted)
-                break;      // Stop checking diagonal direction, conflict found
+                conflicts++;
             }
         }
 
@@ -73,7 +68,6 @@ public class Queen extends ChessPiece {
             if (i == col) continue;
             if (board[row][i] != null) {
                 conflicts++;
-                break;
             }
         }
 
@@ -82,7 +76,6 @@ public class Queen extends ChessPiece {
             if (i == row) continue;
             if (board[i][col] != null) {
                 conflicts++;
-                break;
             }
         }
 
@@ -90,13 +83,11 @@ public class Queen extends ChessPiece {
         for (int i = 1; row - i >= 0 && col - i >= 0; i++) {
             if (board[row - i][col - i] != null) {
                 conflicts++;
-                break;
             }
         }
         for (int i = 1; row + i < 8 && col + i < 8; i++) {
             if (board[row + i][col + i] != null) {
                 conflicts++;
-                break;
             }
         }
 
@@ -104,13 +95,11 @@ public class Queen extends ChessPiece {
         for (int i = 1; row - i >= 0 && col + i < 8; i++) {
             if (board[row - i][col + i] != null) {
                 conflicts++;
-                break;
             }
         }
         for (int i = 1; row + i < 8 && col - i >= 0; i++) {
             if (board[row + i][col - i] != null) {
                 conflicts++;
-                break;
             }
         }
 
